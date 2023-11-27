@@ -1,0 +1,31 @@
+package MVC1.servlet.basic.response;
+
+import MVC1.servlet.basic.HelloData;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet(name="responseJsonServlet", urlPatterns = "/response-json")
+
+public class ResponseJsonServlet extends HttpServlet {
+
+    private ObjectMapper objectMapper = new ObjectMapper();
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //Content-Type: application/json
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+
+        HelloData helloData = new HelloData();
+        helloData.setUsername("kim keonhwi");
+        helloData.setAge(25);
+
+        //{"username" : "kim keonhwi", "age" : 25}
+       String result = objectMapper.writeValueAsString(helloData);
+       response.getWriter().write(result);
+    }
+}

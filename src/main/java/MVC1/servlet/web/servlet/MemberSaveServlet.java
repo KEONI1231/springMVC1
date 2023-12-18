@@ -23,6 +23,8 @@ public class MemberSaveServlet extends HttpServlet {
         Member member = new Member(username, age);
         memberRepository.save(member);
 
+
+        //asdf
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         PrintWriter w = response.getWriter();

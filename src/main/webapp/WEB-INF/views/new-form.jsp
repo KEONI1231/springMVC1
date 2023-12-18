@@ -11,7 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
     <form action="save" method="post">
         username: <input type="text" name="username" />
         age:

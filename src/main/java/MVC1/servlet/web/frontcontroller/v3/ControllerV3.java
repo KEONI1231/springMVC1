@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.Map;
 
 public interface ControllerV3 {
-    ModelView process(Map<String, String> paramMap);
 
+    ModelView process(Map<String, String> paramMap);
 
 
 }

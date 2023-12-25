@@ -28,7 +28,7 @@ public class FrontControllerServletV2 extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String requestURI = request.getRequestURI();
         ControllerV2 controller = controllerV1Map.get(requestURI);
-        if(controller == null) {
+         if(controller == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
